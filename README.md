@@ -1,63 +1,13 @@
-# 아키텍쳐
-```mermaid
-flowchart TB
-    subgraph Client["Client Side (Next.js)"]
-        direction TB
-        Pages["Pages (Next.js Pages)"]
-        Components["Components"]
-        Hooks["Custom Hooks"]
-        
-        subgraph State["State Management"]
-            Zustand["Zustand Store"]
-        end
-        
-        subgraph Styling["Styling Layer"]
-            Emotion["Emotion/Styled Components"]
-        end
-    end
+## 제주 타고
 
-    subgraph Firebase["Firebase Services"]
-        direction TB
-        Auth["Firebase Authentication"]
-        Firestore["Cloud Firestore"]
-        Storage["Firebase Storage"]
-        Analytics["Firebase Analytics"]
-    end
+설명
 
-    subgraph External["External Services"]
-        KakaoMap["Kakao Map API"]
-    end
+## 프로젝트 구동 방법
 
-    subgraph DevOps["DevOps & Deployment"]
-        Git["Git Repository"]
-        Husky["Husky (Git Hooks)"]
-        Vercel["Vercel Deployment"]
-    end
+```bash
+yarn install
 
-    %% Client-side connections
-    Pages --> Components
-    Components --> Hooks
-    Components --> Emotion
-    Components --> Zustand
-    Hooks --> Zustand
+yarn dev
+```
 
-    %% Firebase connections
-    Components --> Auth
-    Components --> Firestore
-    Components --> Storage
-    Components --> Analytics
-
-    %% External API connection
-    Components --> KakaoMap
-
-    %% Deployment flow
-    Git --> Husky
-    Husky --> Vercel
-    Vercel --> Client
-
-    %% Styling
-    style Client fill:#f9f,stroke:#333,stroke-width:2px
-    style Firebase fill:#ffb,stroke:#333,stroke-width:2px
-    style External fill:#bfb,stroke:#333,stroke-width:2px
-    style DevOps fill:#bbf,stroke:#333,stroke-width:2px
-  ```
+## 아키텍쳐
